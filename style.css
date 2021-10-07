@@ -1,0 +1,62 @@
+:root{
+  --color-bg: rgb(22, 22, 22);
+  --color-card-bg: rgb(39, 36, 36);
+}
+
+
+body{
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-card-bg);
+    padding: 20px;
+    width: 30vw;
+    border-radius: 20px;
+}
+
+.box:hover h1:after{
+  transform: translate(-5px, .8px);
+}
+
+h1{
+  font-size: 10rem;
+  position: relative;
+  color: #000;  
+}
+
+h1:before{
+  content: attr(data-name);
+  text-shadow: 3px 3px var(--color-card-bg), -3px -3px var(--color-card-bg), 3px -3px 2px var(--color-card-bg);
+  position: absolute;
+  left: 0;
+  top: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 66%);
+  color: var(--color-card-bg);
+  overflow: hidden;
+}
+
+h1:after{
+  content: attr(data-name);
+  position: absolute;
+  left: 0;
+  top: -4px;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 66%);
+  overflow: hidden;
+  transition: transform .2s ease-in-out;
+  
+  background-image: linear-gradient(to right, #a45c18, #EDAE26, #E3BB2F, #a45c18, #EDAE26);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
